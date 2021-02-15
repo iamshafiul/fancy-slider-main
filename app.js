@@ -4,7 +4,6 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
- const duration = document.getElementById('duration-time').value;
 const input = document.getElementById("search");
 
 
@@ -34,6 +33,7 @@ const getImages = (query) => {
     .catch(err => console.log(err))
 
 }
+
 
 // show images 
 const showImages = (images) => {
@@ -74,6 +74,7 @@ const createSlider = () => {
     return;
   }
 
+  const duration = document.getElementById('duration-time').value;
   if (duration >= 1000) {
     // crate slider previous next area
     sliderContainer.innerHTML = '';
@@ -105,7 +106,7 @@ const createSlider = () => {
       changeSlide(slideIndex);
     }, duration);
   } else {
-    alert('Starting number is 1000!!')
+    alert('Starting number is 1000!')
   }
 }
 
@@ -150,11 +151,11 @@ sliderBtn.addEventListener('click', function () {
 
 //loading spinner
 const loadingSpinner = (show) => {
-    const spinner = document.getElementById('spinner');
-    if(show){
-       spinner.classList.remove('d-none');
-    }else{
-      spinner.classList.add('d-none');
-    }
-   
+  const spinner = document.getElementById('spinner');
+  if (show) {
+    spinner.classList.remove('d-none');
+  } else {
+    spinner.classList.add('d-none');
+  }
+
 }
